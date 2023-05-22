@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 370246012}
   - component: {fileID: 370246014}
   - component: {fileID: 370246013}
+  - component: {fileID: 370246015}
   m_Layer: 0
   m_Name: Circle (1)
   m_TagString: Untagged
@@ -206,6 +207,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370246011}
   m_Mesh: {fileID: 3142766747746725659, guid: 2295c1e91ea30c140bcc610edcad4a61, type: 3}
+--- !u!114 &370246015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370246011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef0c68654916be4394dc15853bb68a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _concerningStand: {fileID: 3537558953227701042}
+  _concerningCircleSocket: {fileID: 5211720415664664368}
+  moveThereIs: 0
+  Color: Red
+  _gameManager: {fileID: 1044233395}
 --- !u!1 &569630254
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +235,7 @@ GameObject:
   - component: {fileID: 569630255}
   - component: {fileID: 569630257}
   - component: {fileID: 569630256}
+  - component: {fileID: 569630258}
   m_Layer: 0
   m_Name: Circle_3 (1)
   m_TagString: Untagged
@@ -289,6 +308,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569630254}
   m_Mesh: {fileID: 6406311556572555026, guid: 2295c1e91ea30c140bcc610edcad4a61, type: 3}
+--- !u!114 &569630258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569630254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef0c68654916be4394dc15853bb68a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _concerningStand: {fileID: 3537558953227701042}
+  _concerningCircleSocket: {fileID: 7774491142367050198}
+  moveThereIs: 0
+  Color: Red
+  _gameManager: {fileID: 1044233395}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +549,7 @@ GameObject:
   - component: {fileID: 932535620}
   - component: {fileID: 932535622}
   - component: {fileID: 932535621}
+  - component: {fileID: 932535623}
   m_Layer: 0
   m_Name: Circle_2 (1)
   m_TagString: Untagged
@@ -585,6 +622,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932535619}
   m_Mesh: {fileID: 6073444649356236017, guid: 2295c1e91ea30c140bcc610edcad4a61, type: 3}
+--- !u!114 &932535623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932535619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef0c68654916be4394dc15853bb68a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _concerningStand: {fileID: 3537558953227701042}
+  _concerningCircleSocket: {fileID: 3372544056433808247}
+  moveThereIs: 0
+  Color: Red
+  _gameManager: {fileID: 1044233395}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +780,7 @@ GameObject:
   - component: {fileID: 1519726708}
   - component: {fileID: 1519726710}
   - component: {fileID: 1519726709}
+  - component: {fileID: 1519726711}
   m_Layer: 0
   m_Name: Circle_4 (1)
   m_TagString: Untagged
@@ -798,6 +853,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519726707}
   m_Mesh: {fileID: 4462925466751017627, guid: 2295c1e91ea30c140bcc610edcad4a61, type: 3}
+--- !u!114 &1519726711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519726707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef0c68654916be4394dc15853bb68a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _concerningStand: {fileID: 3537558953227701042}
+  _concerningCircleSocket: {fileID: 1085152954537515104}
+  moveThereIs: 1
+  Color: Red
+  _gameManager: {fileID: 1044233395}
 --- !u!1 &1606804975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1310,11 @@ MonoBehaviour:
   - {fileID: 7774491142367050198}
   - {fileID: 1085152954537515104}
   emptySocket: 0
-  _Circle: []
+  _Circle:
+  - {fileID: 370246011}
+  - {fileID: 932535619}
+  - {fileID: 569630254}
+  - {fileID: 1519726707}
   _gameManager: {fileID: 1044233395}
 --- !u!4 &4501986795536358556
 Transform:

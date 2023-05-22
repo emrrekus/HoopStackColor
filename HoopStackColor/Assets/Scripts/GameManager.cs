@@ -22,7 +22,55 @@ public class GameManager : MonoBehaviour
                 {
                     if (selectedObject != null && selectedPlatform != hit.collider.gameObject)
                     {
+                        Stand _Stand = hit.collider.GetComponent<Stand>();
+
+                        if (_Stand._Circle.Count != 4 && _Stand._Circle.Count != 0)
+                        {
+                            if (_Circle.Color == _Stand._Circle[^1].GetComponent<Circle>().Color)
+                            {
+                                selectedPlatform.GetComponent<Stand>().SocketChange(selectedObject);
+                                _Circle.Move("Change", hit.collider.gameObject, _Stand.AvaibleSocketGive(),
+                                    _Stand.movePosition);
+
+                                _Stand.emptySocket++;
+                                _Stand._Circle.Add(selectedObject);
+
+                                selectedObject = null;
+                                selectedPlatform = null;
+                            }
+                            else
+                            {
+                                _Circle.Move("socketMoveBack");
+                                selectedObject = null;
+                                selectedPlatform = null;
+                            }
+                        }
+                        else if (_Stand._Circle.Count == 0)
+                        {
+                            selectedPlatform.GetComponent<Stand>().SocketChange(selectedObject);
+                            _Circle.Move("Change", hit.collider.gameObject, _Stand.AvaibleSocketGive(),
+                                _Stand.movePosition);
+
+                            _Stand.emptySocket++;
+                            _Stand._Circle.Add(selectedObject);
+
+                            selectedObject = null;
+                            selectedPlatform = null;
+                        }
+                        else
+                        {
+                            _Circle.Move("socketMoveBack");
+                            selectedObject = null;
+                            selectedPlatform = null;
+                        }
                     }
+                    else if (selectedPlatform == hit.collider.gameObject)
+                    {
+                        _Circle.Move("socketMoveBack");
+                        selectedObject = null;
+                        selectedPlatform = null;
+                    }
+
                     else
                     {
                         Stand _Stand = hit.collider.GetComponent<Stand>();
@@ -32,11 +80,11 @@ public class GameManager : MonoBehaviour
 
                         if (_Circle.moveThereIs)
                         {
-                            _Circle.Move("Selected",null,null,_Circle._concerningStand.GetComponent<Stand>().movePosition);
+                            _Circle.Move("Selected", null, null,
+                                _Circle._concerningStand.GetComponent<Stand>().movePosition);
 
                             selectedPlatform = _Circle._concerningStand;
                         }
-                        
                     }
                 }
             }

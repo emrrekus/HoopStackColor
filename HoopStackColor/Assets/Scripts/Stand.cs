@@ -16,5 +16,25 @@ public class Stand : MonoBehaviour
       return _Circle[^1];
    }
 
+   public GameObject AvaibleSocketGive()
+   {
+      return Sockets[emptySocket];
+   }
+
+   public void SocketChange(GameObject RemoveObject)
+   {
+      _Circle.Remove(RemoveObject);
+      
+      if (_Circle.Count != 0)
+      {
+         emptySocket--;
+         _Circle[^1].GetComponent<Circle>().moveThereIs = true;
+         
+      }
+      else
+      {
+         emptySocket = 0;
+      }
+   }
 
 }
