@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
     private GameObject selectedPlatform;
     private Circle _Circle;
     public bool moveThereIs;
-    public int targetStandCount;
-    private int completedStandCount;
+    
+    public int targetColorCount;
+    private int completedColorCount;
 
     // Update is called once per frame
     void Update()
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
                                 _Stand.emptySocket++;
                                 _Stand._Circle.Add(selectedObject);
+                                _Stand.CircleControl();
 
                                 selectedObject = null;
                                 selectedPlatform = null;
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
 
                             _Stand.emptySocket++;
                             _Stand._Circle.Add(selectedObject);
+                            _Stand.CircleControl();
 
                             selectedObject = null;
                             selectedPlatform = null;
@@ -89,5 +92,12 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void StandComplate()
+    {
+        completedColorCount++;
+        if (targetColorCount == completedColorCount)
+            Debug.Log("Winner");
     }
 }
